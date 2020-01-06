@@ -1,5 +1,7 @@
 package com.zq.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,5 +26,12 @@ public class YearController {
 		PageInfo<Year> pageInfo = yearService.list(model,page,pageSize,year);
 		model.addAttribute("pageInfo", pageInfo);
 		return "list";
+	}
+	
+	@RequestMapping("update")
+	public String update(Model model,Integer id) {
+		List<Year> list =  yearService.selectOne(id);
+		model.addAttribute("list", list);
+		return "update";
 	}
 }

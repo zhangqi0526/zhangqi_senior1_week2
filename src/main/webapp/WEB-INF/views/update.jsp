@@ -9,6 +9,55 @@
 <script type="text/javascript" src="/js/jquery-1.8.3.js"></script>
 </head>
 <body>
-
+	<table>
+		<tr>
+			<td>keyWords</td>
+			<td>
+				<input type="text" name="keyWords" value="${list.keyWords }">
+			</td>
+		</tr>
+		<tr>
+			<td>companyName</td>
+			<td>
+				<input type="text" name="companyName" value="${list.companyName }">
+			</td>
+		</tr>
+		<tr>
+			<td>mainGoods</td>
+			<td>
+				<input type="text" name="mainGoods" value="${list.mainGoods }">
+			</td>
+		</tr>
+		<tr>
+			<td>address</td>
+			<td>
+				<input type="text" name="address" value="${list.address }">
+			</td>
+		</tr>
+		<tr>
+			<td>numPrice</td>
+			<td>
+				<input type="text" name="numPrice" value="${list.numPrice }">
+			</td>
+		</tr>
+		<tr>
+			<td>startDate</td>
+			<td>
+				<input type="text" name="startDate" value="${list.startDate }">
+			</td>
+		</tr>
+		<tr>
+			<td>checkDate</td>
+			<td>
+				<input type="text" name="checkDate" value="${list.checkDate }">
+			</td>
+		</tr>
+		<tr>
+			<td>status</td>
+			<td>
+				<input type="text" name="status" value="${list.status }">
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

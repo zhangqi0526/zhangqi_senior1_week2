@@ -24,7 +24,7 @@ public class YearServiceImpl implements YearService {
 	@Override
 	public List<Year> readFileText() {
 		List<Year> yearList = new ArrayList<Year>();
-		/*List<String> readTextFileOfList = FileUtil.readTextFileOfList("C:\\Users\\Administrator\\Desktop\\cms附件-机械设备公司年检信息.txt");
+		List<String> readTextFileOfList = FileUtil.readTextFileOfList("C:\\Users\\Administrator\\Desktop\\cms附件-机械设备公司年检信息.txt");
 		for (String record : readTextFileOfList) {
 				System.out.println(record);
 				String[] split = record.split("，");
@@ -70,7 +70,7 @@ public class YearServiceImpl implements YearService {
 				yearList.add(year);
 		}
 		System.out.println(yearList);
-		yearDao.insert(yearList);*/
+		yearDao.insert(yearList);
 		return yearList;
 	}
 	@Override
@@ -79,6 +79,11 @@ public class YearServiceImpl implements YearService {
 		PageHelper.startPage(page, pageSize);
 		List<Year> list = yearDao.list(year);
 		return new PageInfo<Year>(list);
+	}
+	@Override
+	public List<Year> selectOne(Integer id) {
+		// TODO Auto-generated method stub
+		return yearDao.selectOne(id);
 	}
 	
 	

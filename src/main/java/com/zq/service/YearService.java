@@ -16,4 +16,6 @@ public interface YearService {
 	public List<Year> readFileText();
 
 	public PageInfo<Year> list(Model model, Integer page, Integer pageSize, Year year);
+
+	public List<Year> selectOne(Integer id);
 }
