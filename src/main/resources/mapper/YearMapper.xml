@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zq.dao.YearDao">
+	<insert id="yearList">
+		INSERT INTO year(keyWords,description,companyName,mainGoods,address,numPrice,startDate,checkDate,status) VALUES 
+		<foreach collection="yearLIst" item="c" separator=",">
+			(#{c.keyWords},#{c.description},#{c.companyName},#{c.mainGoods},#{c.address},#{c.numPrice},#{c.startDate},#{c.checkDate},#{c.status})
+		</foreach>
+	</insert>
+	<select id="list" resultType="Year">
+		select * from year
+		<where>
+			<if test="keyWords!=''">
+				keyWords like '%${keyWords}%'
+			</if>
+			<if test="description!=''">
+				and description like '%${description}%'
+			</if>
+			<if test="companyName!=''">
+				and companyName like '%${companyName}%'
+			</if>
+			<if test="numPrice!=''">
+				and numPrice like '%${numPrice}%'
+			</if>
+			<if test="startDate!=''">
+				and startDate like '%${startDate}%'
+			</if>
+			<if test="checkDate!=''">
+				and checkDate like '%${checkDate}%'
+			</if>
+			<if test="status!=''">
+				and status like '%${status}%'
+			</if>
+		</where>
+	</select>
+</mapper>
